@@ -20,7 +20,7 @@ make build
 
 Use the following command to start backup and copy to LOCAL backet:
 ```shell
-docker run --rm -v /data/web:/data:ro /mnt/storage:/backup:ro\
+docker run --rm -v /data/web:/data:ro -v /mnt/storage:/backup:ro \
   -e BACKUP_FORMAT='xz' \
   -e BACKUP_EXCLUDE='ansible,roles,collections,.terraform,.DS_Store,node_modules,*.log' \
   -e BACKUP_NAME=files \
